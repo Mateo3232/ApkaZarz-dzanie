@@ -1,0 +1,73 @@
+
+mat-sidenav-container {
+    width: 100%;
+    height: calc(100vh - 65px);
+   }
+  
+  mat-sidenav{
+  
+  width: 20%;
+    background-color: #e91e63;
+  }
+  p{    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+  
+  }
+  .number{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+    font-size: 200px;
+   text-align: center;
+    width: 25vh;
+    transform: translate(-50%, -50%);
+    
+  }
+  .started{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+    font-size: 200px;
+    transform: translate(-50%, -50%);
+    width: 25vh;
+    color: green;
+  }
+  .done{  position: absolute;
+    top: 50%;
+    left: 50%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+    font-size: 200px;
+    transform: translate(-50%, -50%);
+    width: 25vh;
+    color: blue;
+   }
+  #wrapDiv{
+  
+    height: 100%;
+  }
+  #firstDiv{
+  position: relative;
+  height: 30%;
+  padding-top: 20px;
+  
+  
+  }
+  #secDiv{
+  position: relative;
+  height: 30%;
+   }
+  
+  #lastDiv{
+    position: relative;
+    height: 30%;}
+    mat-sidenav-content{height:100%;
+    width: 80%;
+}
+    

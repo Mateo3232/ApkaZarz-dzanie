@@ -1,0 +1,19 @@
+.buttons{margin: auto;
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+position: absolute;
+left: 30%;
+right: 30%;
+top: 50%;
+height: 50px;
+text-align: center;
+}
+
+.mat-raised-button{
+    text-align: center;
+
+    width: 200px;
+    height: 100%;
+    gap: 20px;
+    }

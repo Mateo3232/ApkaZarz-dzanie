@@ -1,0 +1,67 @@
+
+<h1>Create project</h1>
+<!-- <form #login="ngForm" class="projForm" [formGroup]="projList" (ngSubmit)="onSubmit(login)"></form> -->
+<form class="example-form" class="projForm" [formGroup]="projList" (ngSubmit)="onSubmit()">
+ 
+    <mat-form-field appearance="fill">
+       <mat-label> Project name:</mat-label>
+        <!-- <input #name="ngModel" name="projName" type="text" ngModel /> -->
+        <input matInput formControlName="projName" name="projName" type="text" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>They will working</mat-label>
+        <mat-chip-list #chipList aria-label="Worker selection">
+          <mat-chip *ngFor="let worker of workers" (removed)="remove(worker)">
+            {{worker.name}}
+            <button matChipRemove>
+              <mat-icon>cancel</mat-icon>
+            </button>
+          </mat-chip>
+          <input formControlName="workers" placeholder="New worker..."
+                 [matChipInputFor]="chipList"
+                 [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                 [matChipInputAddOnBlur]="addOnBlur"
+                 (matChipInputTokenEnd)="add($event)">
+        </mat-chip-list>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Describtion</mat-label>
+        <textarea formControlName="desc" matInput placeholder="Describe project"></textarea>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Chose category</mat-label>
+        <mat-chip-list #CategoryList aria-label="Fruit selection">
+          <mat-chip
+            *ngFor="let category of categories"
+            (removed)="removeCat(category)">
+            {{category}}
+            <button matChipRemove>
+              <mat-icon>cancel</mat-icon>
+            </button>
+          </mat-chip>
+          <input
+            placeholder="Chose category..."
+            formControlName="workers"
+            #categoryInput
+            [formControl]="categoryCtrl"
+            [matAutocomplete]="auto"
+            [matChipInputFor]="CategoryList"
+            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+            (matChipInputTokenEnd)="addCat($event)">
+        </mat-chip-list>
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+          <mat-option *ngFor="let category of filteredCategories | async" [value]="category">
+            {{category}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+      <mat-radio-group formControlName="prior" aria-label="Select an option">
+        <mat-radio-button value="Major">Major</mat-radio-button>
+        <mat-radio-button value="Medium">Medium</mat-radio-button>
+        <mat-radio-button value="Low">Low</mat-radio-button>
+      </mat-radio-group>
+      <div id="buttonDiv">
+      <button mat-raised-button color="primary" id="sumbit" type="submit"><mat-icon>add</mat-icon></button>
+      <button mat-raised-button color="accent"><mat-icon>undo</mat-icon></button>
+    </div>
+</form>
